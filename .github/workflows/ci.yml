@@ -53,6 +53,8 @@ jobs:
     needs: build
     if: github.ref == 'refs/heads/main' && github.event_name == 'push'
     runs-on: ubuntu-latest
+    environment:
+      name: github-pages  
     permissions:
       pages: write
       id-token: write 
