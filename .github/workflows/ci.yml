@@ -33,6 +33,17 @@ jobs:
       - name: Validar Markdown
         run: markdownlint '**/*.md'
 
+      # Carpeta para Despliegue
+      - name: Preparar carpeta para deploy
+        run: mkdir public && cp README.md public/index.md
+        
+      # Cargar Artifact
+      - name: Upload artifact for Pages
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./public
+          name: github-pages
+
       # Runs a single command using the runners shell
       - name: Run a one-line script
         run: echo Hello, world!
