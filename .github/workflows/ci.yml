@@ -39,7 +39,7 @@ jobs:
         
       # Cargar Artifact
       - name: Upload artifact for Pages
-        uses: actions/upload-pages-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
           name: github-pages
